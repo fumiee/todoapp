@@ -1,5 +1,6 @@
-import Header from "./header";
-import Nav from "./nav";
+import { FoodCaption, YoutuberCaption } from "../components/caption";
+import { Headline } from "../components/headline";
+import { Nav } from "../components/nav";
 
 const ITEMS = [
   { src: "https://www.youtube.com/embed/vEBWzLoP_Zg" },
@@ -11,12 +12,16 @@ const Home = () => {
   return (
     <div>
       <div className="min-h-screen font-serif text-gray-600">
-        <Header />
+        <Headline />
         <Nav />
+        <div className="space-y-2">
+          <FoodCaption />
+          <YoutuberCaption />
+        </div>
 
         <main>
           <h1 className="flex justify-center items-center text-xl h-12">
-            ＜おすすめ動画＞
+            おすすめ動画
           </h1>
           <div className="flex flex-col justify-center space-y-3">
             {ITEMS.map((item) => {

@@ -14,7 +14,7 @@ const Home = () => {
       <Nav />
       <main>
         <h1 className="flex justify-center items-center text-xl h-12">
-          食材順
+          youtuber順
         </h1>
         <div className="flex flex-col justify-center space-y-3">
           {ITEMS.map((item) => {
