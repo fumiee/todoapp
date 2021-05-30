@@ -1,32 +1,22 @@
 import Link from "next/link";
+import cc from "classcat";
 
 export const FoodCaptions = ["鶏肉", "豚肉", "大根", "キャベツ", "きのこ"];
 export const YoutuberCaptions = ["クキパパ", "リュウジ", "食堂あさごはん"];
 
-export const FoodCaption = () => {
+export const Caption = (props) => {
   return (
     <div>
-      {FoodCaptions.map((FoodCaption) => {
+      {props.captions.map((caption) => {
         return (
-          <Link key={FoodCaption} href="/template">
-            <a className="border-2 border-yellow-200 rounded-full p-1 text-sm">
-              {FoodCaption}
-            </a>
-          </Link>
-        );
-      })}
-    </div>
-  );
-};
-
-export const YoutuberCaption = () => {
-  return (
-    <div>
-      {YoutuberCaptions.map((YoutuberCaption) => {
-        return (
-          <Link key={YoutuberCaption} href="/template">
-            <a className="border-2 border-pink-200 rounded-full p-1 text-sm">
-              {YoutuberCaption}
+          <Link key={caption} href={`/${caption}/template`}>
+            <a
+              className={cc([
+                "border-2 rounded-full p-1 text-sm",
+                props.type === "food" ? "border-yellow-200" : "border-pink-200",
+              ])}
+            >
+              {caption}
             </a>
           </Link>
         );

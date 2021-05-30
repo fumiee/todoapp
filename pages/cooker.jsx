@@ -1,4 +1,4 @@
-import { FoodCaption, YoutuberCaption } from "../components/caption";
+import { Caption } from "../components/caption";
 import { Headline } from "../components/headline";
 import { Nav } from "../components/nav";
 
@@ -8,6 +8,9 @@ const ITEMS = [
   { src: "https://www.youtube.com/embed/Pgjs5unOMmY" },
 ];
 
+const FoodCaptions = ["鶏肉", "豚肉", "大根", "キャベツ", "きのこ"];
+const YoutuberCaptions = ["クキパパ", "リュウジ", "食堂あさごはん"];
+
 const Home = () => {
   return (
     <div>
@@ -15,8 +18,8 @@ const Home = () => {
         <Headline />
         <Nav />
         <div className="space-y-2">
-          <FoodCaption />
-          <YoutuberCaption />
+          <Caption captions={FoodCaptions} type="food" />
+          <Caption captions={YoutuberCaptions} type="youtuber" />
         </div>
 
         <main>
