@@ -1,3 +1,4 @@
+import { Caption } from "../components/caption";
 import { Headline } from "../components/headline";
 import { Nav } from "../components/nav";
 
@@ -6,12 +7,23 @@ const ITEMS = [
   { src: "https://www.youtube.com/embed/uZ6FBiiNJl4" },
   { src: "https://www.youtube.com/embed/Pgjs5unOMmY" },
 ];
+const YoutuberCaptions = [
+  "クキパパ",
+  "リュウジ",
+  "食堂あさごはん",
+  "コウケンテツ",
+  "はるあん",
+  "さくぱん",
+];
 
 const Home = () => {
   return (
     <div className="min-h-screen font-serif text-gray-600 ">
       <Headline />
       <Nav />
+      <div>
+        <Caption captions={YoutuberCaptions} type="youtuber" />
+      </div>
       <main>
         <h1 className="flex justify-center items-center text-xl h-12">
           youtuber順

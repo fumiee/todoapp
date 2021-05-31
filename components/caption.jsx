@@ -1,19 +1,21 @@
 import Link from "next/link";
 import cc from "classcat";
 
-export const FoodCaptions = ["鶏肉", "豚肉", "大根", "キャベツ", "きのこ"];
-export const YoutuberCaptions = ["クキパパ", "リュウジ", "食堂あさごはん"];
-
 export const Caption = (props) => {
   return (
-    <div>
+    <div className="flex flex-wrap gap-y-1 gap-x-1">
       {props.captions.map((caption) => {
         return (
           <Link key={caption} href={`/${caption}/template`}>
             <a
               className={cc([
-                "border-2 rounded-full p-1 text-sm",
-                props.type === "food" ? "border-yellow-200" : "border-pink-200",
+                "border-2 rounded-full p-1  text-sm",
+                {
+                  ["border-yellow-300"]: props.type === "food",
+                  ["border-pink-300"]: props.type === "youtuber",
+                  ["border-yellow-400"]: props.type === "meet",
+                  ["border-green-400"]: props.type === "vesi",
+                },
               ])}
             >
               {caption}

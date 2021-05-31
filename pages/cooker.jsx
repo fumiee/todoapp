@@ -8,8 +8,21 @@ const ITEMS = [
   { src: "https://www.youtube.com/embed/Pgjs5unOMmY" },
 ];
 
-const FoodCaptions = ["鶏肉", "豚肉", "大根", "キャベツ", "きのこ"];
-const YoutuberCaptions = ["クキパパ", "リュウジ", "食堂あさごはん"];
+const FoodCaptions = [
+  "鶏肉",
+  "豚肉",
+  "牛肉",
+  "大根",
+  "キャベツ",
+  "きのこ",
+  "玉ねぎ",
+];
+const YoutuberCaptions = [
+  "クキパパ",
+  "リュウジ",
+  "食堂あさごはん",
+  "コウケンテツ",
+];
 
 const Home = () => {
   return (
@@ -17,7 +30,7 @@ const Home = () => {
       <div className="min-h-screen font-serif text-gray-600">
         <Headline />
         <Nav />
-        <div className="space-y-2">
+        <div className="space-y-1">
           <Caption captions={FoodCaptions} type="food" />
           <Caption captions={YoutuberCaptions} type="youtuber" />
         </div>

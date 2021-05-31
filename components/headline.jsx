@@ -12,7 +12,7 @@ export const Headline = () => {
           料理系 YouTuber
           <img
             className="ml-2 mr-1"
-            src="youtube.jpeg"
+            src="/youtube.jpeg"
             alt="youtubeのアイコン"
           />
           まとめ
