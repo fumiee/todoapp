@@ -3,7 +3,7 @@ import cc from "classcat";
 
 export const Caption = (props) => {
   return (
-    <div className="flex flex-wrap gap-y-1 gap-x-1">
+    <div className="flex flex-wrap gap-y-2 gap-x-2">
       {props.captions.map((caption) => {
         return (
           <Link key={caption} href={`/${caption}/template`}>
@@ -11,10 +11,11 @@ export const Caption = (props) => {
               className={cc([
                 "border-2 rounded-full p-1  text-sm",
                 {
-                  ["border-yellow-300"]: props.type === "food",
-                  ["border-pink-300"]: props.type === "youtuber",
-                  ["border-yellow-400"]: props.type === "meet",
-                  ["border-green-400"]: props.type === "vesi",
+                  ["border-yellow-300 bg-yellow-50"]: props.type === "food",
+                  ["border-pink-300 bg-pink-50  bg-opacity-70"]:
+                    props.type === "youtuber",
+                  ["border-yellow-400 bg-yellow-50"]: props.type === "meet",
+                  ["border-red-300 bg-red-50"]: props.type === "vesi",
                 },
               ])}
             >

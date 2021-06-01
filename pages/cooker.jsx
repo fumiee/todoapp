@@ -9,9 +9,8 @@ const ITEMS = [
 ];
 
 const FoodCaptions = [
-  "鶏肉",
+  "鶏もも肉",
   "豚肉",
-  "牛肉",
   "大根",
   "キャベツ",
   "きのこ",
