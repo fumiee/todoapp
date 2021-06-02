@@ -11,11 +11,11 @@ export const Caption = (props) => {
               className={cc([
                 "border-2 rounded-full p-1  text-sm",
                 {
-                  ["border-yellow-300 bg-yellow-50"]: props.type === "food",
-                  ["border-pink-300 bg-pink-50  bg-opacity-70"]:
+                  ["border-yellow-200 bg-yellow-50"]: props.type === "food",
+                  ["border-blue-200 bg-blue-50  bg-opacity-70"]:
                     props.type === "youtuber",
-                  ["border-yellow-400 bg-yellow-50"]: props.type === "meet",
-                  ["border-red-300 bg-red-50"]: props.type === "vesi",
+                  ["border-yellow-300 bg-yellow-50"]: props.type === "meet",
+                  ["border-red-200 bg-red-50"]: props.type === "vesi",
                 },
               ])}
             >
