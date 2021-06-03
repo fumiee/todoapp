@@ -17,7 +17,7 @@ export const Nav = () => {
         <Link href="/food">
           <a
             className={cc([
-              "flex items-center rounded-full border-yellow-200 border-4 h-10 w-10",
+              "flex items-center rounded-full border-4 border-yellow-200 h-10 w-10",
               router.pathname === "/food"
                 ? "bg-yellow-300"
                 : "border-yellow-200",
@@ -29,29 +29,27 @@ export const Nav = () => {
         <Link href="/youtuber">
           <a
             className={cc([
-              "flex items-center justify-center rounded-full border-4 border-pink-200 h-10 w-10 mx-1",
+              "flex items-center justify-center rounded-full border-4  h-10 w-10 mx-1",
               router.pathname === "/youtuber"
-                ? "bg-pink-300"
-                : "border-pink-300",
+                ? "bg-blue-300"
+                : "border-blue-300",
             ])}
           >
             y
-            <span className="flex items-center justify-center rounded-full border-4 border-pink-200 h-10 w-10 mx-1">
+            <span className="flex items-center justify-center rounded-full border-4 border-blue-200 h-10 w-10 mx-1">
               outube
             </span>
             r
           </a>
         </Link>
-        <Link href="/views">
+        <Link href="/favorite">
           <a
             className={cc([
-              "flex justify-center text-xs rounded-full border-4 border-indigo-300 h-10 w-10 pl-1",
-              router.pathname === "/views"
-                ? "bg-indigo-400"
-                : "border-indigo-300",
+              "flex items-center rounded-full border-red-200 border-4 h-10 w-10",
+              router.pathname === "/favorite" ? "bg-red-300" : "border-red-200",
             ])}
           >
-            再生回数
+            保存
           </a>
         </Link>
       </nav>

@@ -1,3 +1,4 @@
 {
-    "git.ignoreLimitWarning": true
+  "git.inoreLimitWarning": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative"
 }

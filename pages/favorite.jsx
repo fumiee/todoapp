@@ -1,5 +1,5 @@
-import { Headline } from "../components/headline";
-import { Nav } from "../components/nav";
+import { Headline } from "components/headline";
+import { Nav } from "components/nav";
 
 const ITEMS = [
   { src: "https://www.youtube.com/embed/vEBWzLoP_Zg" },
@@ -14,7 +14,7 @@ const Home = () => {
       <Nav />
       <main>
         <h1 className="flex justify-center items-center text-xl h-12">
-          再生回数順
+          保存動画一覧
         </h1>
         <div className="flex flex-col justify-center space-y-3">
           {ITEMS.map((item) => {

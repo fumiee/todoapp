@@ -1,6 +1,6 @@
-import { Caption } from "../components/caption";
-import { Headline } from "../components/headline";
-import { Nav } from "../components/nav";
+import { Caption } from "components/caption";
+import { Headline } from "components/headline";
+import { Nav } from "components/nav";
 
 const MeetCaptions = [
   "鶏もも肉",
