@@ -44,7 +44,6 @@ const Home = () => {
       </div>
 
       <p className="mb-3"></p>
-      <Nav />
     </div>
   );
 };

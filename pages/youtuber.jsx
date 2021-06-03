@@ -20,7 +20,6 @@ const Home = () => {
         <Caption captions={YoutuberCaptions} type="youtuber" />
       </div>
       <p className="mb-3"></p>
-      <Nav />
     </div>
   );
 };
