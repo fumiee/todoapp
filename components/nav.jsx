@@ -7,12 +7,11 @@ export const Nav = () => {
 
   return (
     <div>
-      <p className="border-t-2 border-gray-400 border-dashed"></p>
-      <nav className="flex items-center justify-around font-serif py-2">
+      <nav className="bg-white flex items-center justify-around font-serif py-2">
         <Link href="/cooker">
           <img
             className="w-1/7 h-1/2 ml-5"
-            src="search.jpeg"
+            src="/search.jpeg"
             alt="ルーペのアイコン"
           />
         </Link>

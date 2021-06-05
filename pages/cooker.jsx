@@ -1,6 +1,7 @@
 import { Caption } from "components/caption";
 import { Headline } from "components/headline";
 import { Nav } from "components/nav";
+import { useState } from "react";
 
 const ITEMS = [
   {
@@ -68,7 +69,9 @@ const Home = () => {
     <div>
       <div className="min-h-screen font-serif text-gray-600">
         <Headline />
-        <Nav />
+        <div className="sticky top-0 z-50">
+          <Nav />
+        </div>
         <div className="space-y-1">
           <Caption captions={FoodCaptions} type="food" />
           <Caption captions={YoutuberCaptions} type="youtuber" />
@@ -78,43 +81,69 @@ const Home = () => {
           <div className="space-y-2">
             <p className="border-t-2 border-gray-400 border-dashed"></p>
             <h1 className="flex justify-center items-center text-xl h-10">
-              おすすめ動画
+              高評価の動画
             </h1>
           </div>
           <div className="space-y-3 mt-2">
             {ITEMS.map((item) => {
-              return (
-                <div
-                  key={item.details}
-                  className="border-8 border-gray-400 rounded-xl"
-                >
-                  <div className=" bg-gray-400 text-white border-b-8 border-gray-400">
-                    {item.title}
-                  </div>
-                  <div key={item.src} className="aspect-w-16 aspect-h-9">
-                    <iframe
-                      src={item.src}
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    ></iframe>
-                  </div>
-                  <details className="text-sm pt-2 bg-gray-400 text-white">
-                    <summary className="list-none bg-gray-400">
-                      {item.details}
-                      <div className="text-gray-300 text-sm flex justify-end">
-                        ▼もっと見る
-                      </div>
-                    </summary>
-                    <div>
-                      <p>{item.more}</p>
-                    </div>
-                  </details>
-                </div>
-              );
+              return <CookerItem item={item} />;
             })}
           </div>
         </main>
       </div>
+    </div>
+  );
+};
+
+const CookerItem = ({ item }) => {
+  const [isFav, setIsFav] = useState(true);
+
+  return (
+    <div key={item.details} className="border-8 border-gray-400 rounded-xl">
+      <div className=" bg-gray-400 text-white border-b-4 border-gray-400">
+        {item.title}
+      </div>
+      <div key={item.src} className="aspect-w-16 aspect-h-9">
+        <iframe
+          src={item.src}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </div>
+      <details className="text-sm pt-2 bg-gray-400 text-white">
+        <summary className="list-none bg-gray-400">
+          {item.details}
+          <div className="flex justify-between">
+            <div className="text-gray-300 text-sm flex items-end">
+              ▼もっと見る
+            </div>
+            <button
+              onClick={() => {
+                setIsFav((isFav) => {
+                  return isFav ? false : true;
+                });
+                const videos = localStorage.getItem("favVideos");
+                if (!videos) {
+                  localStorage.setItem("favVideos", JSON.stringify([item.src]));
+                } else {
+                  const parseVideos = JSON.parse(videos);
+                  localStorage.setItem(
+                    "favVideos",
+                    JSON.stringify([...parseVideos, item.src])
+                  );
+                }
+              }}
+              className="justify-end p-1 rounded-lg text-sm border-red-200 border-2"
+            >
+              {isFav ? "保存" : "保存済"}
+            </button>
+          </div>
+        </summary>
+        <div>
+          <p>{item.more}</p>
+        </div>
+      </details>
     </div>
   );
 };

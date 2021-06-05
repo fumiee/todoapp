@@ -1,5 +1,6 @@
 import { Headline } from "components/headline";
 import { Nav } from "components/nav";
+import { useState, useEffect } from "react";
 
 const ITEMS = [
   {
@@ -48,10 +49,25 @@ const ITEMS = [
 ];
 
 const Home = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const videos = localStorage.getItem("favVideos");
+    if (videos) {
+      const parseVideos = JSON.parse(videos);
+      const targetItems = ITEMS.filter((item) =>
+        parseVideos.some((video) => video === item.src)
+      );
+      setItems(targetItems);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen font-serif text-gray-600 ">
       <Headline />
-      <Nav />
+      <div className="sticky top-0 z-50">
+        <Nav />
+      </div>
       <main className="mt-5">
         <div className="space-y-2">
           <h1 className="flex justify-center items-center text-xl h-10">
@@ -59,7 +75,7 @@ const Home = () => {
           </h1>
         </div>
         <div className="space-y-3 mt-2">
-          {ITEMS.map((item) => {
+          {items.map((item) => {
             return (
               <div
                 key={item.details}
@@ -72,14 +88,23 @@ const Home = () => {
                   <iframe
                     src={item.src}
                     title="YouTube video player"
+                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   ></iframe>
                 </div>
                 <details className="text-sm pt-2 bg-gray-400 text-white">
                   <summary className="list-none bg-gray-400">
                     {item.details}
-                    <div className="text-gray-300 text-sm flex justify-end">
-                      ▼もっと見る
+                    <div className="flex justify-between">
+                      <div className="text-gray-300 text-sm flex items-end">
+                        ▼もっと見る
+                      </div>
+                      <button
+                        className="justify-end p-1 rounded-lg text-sm
+                      border-red-200 border-2"
+                      >
+                        保存
+                      </button>
                     </div>
                   </summary>
                   <div>
@@ -91,7 +116,6 @@ const Home = () => {
           })}
         </div>
       </main>
-      <Nav />
     </div>
   );
 };

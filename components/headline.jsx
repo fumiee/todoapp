@@ -18,6 +18,7 @@ export const Headline = () => {
           まとめ
         </header>
       </Link>
+      <p className="border-t-2 border-gray-400 border-dashed"></p>
     </div>
   );
 };
