@@ -86,7 +86,7 @@ const Home = () => {
           </div>
           <div className="space-y-3 mt-2">
             {ITEMS.map((item) => {
-              return <CookerItem item={item} />;
+              return <CookerItem item={item} key={item.src} />;
             })}
           </div>
         </main>
@@ -99,11 +99,11 @@ const CookerItem = ({ item }) => {
   const [isFav, setIsFav] = useState(true);
 
   return (
-    <div key={item.details} className="border-8 border-gray-400 rounded-xl">
+    <div className="border-8 border-gray-400 rounded-xl">
       <div className=" bg-gray-400 text-white border-b-4 border-gray-400">
         {item.title}
       </div>
-      <div key={item.src} className="aspect-w-16 aspect-h-9">
+      <div className="aspect-w-16 aspect-h-9">
         <iframe
           src={item.src}
           title="YouTube video player"
