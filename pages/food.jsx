@@ -39,7 +39,9 @@ const Home = () => {
       <Headline />
       <Nav />
       <div className="space-y-1">
+        <p>お肉・魚</p>
         <Caption captions={MeetCaptions} type="meet" />
+        <p>野菜</p>
         <Caption captions={vesiCaptions} type="vesi" />
       </div>
 

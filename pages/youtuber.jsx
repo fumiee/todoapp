@@ -1,14 +1,31 @@
 import { Caption } from "components/caption";
 import { Headline } from "components/headline";
 import { Nav } from "components/nav";
+import { Video } from "components/video";
 
-const YoutuberCaptions = [
+export const YoutuberCaptions = [
+  "谷やん",
+  "Peaceful Cuisine",
+  "きまぐれクック",
+  "JunsKitchen",
+  "Chef Ropia",
+  "栗原心平",
+  "はるあん",
+  "こっタソ",
+  "かっちゃんねる",
+  "一人前食堂",
+  "白ごはん.com",
+  "榎本美沙",
+  "食堂あさごはん",
   "クキパパ",
   "リュウジ",
-  "食堂あさごはん",
   "コウケンテツ",
-  "はるあん",
   "さくぱん",
+  "やさいのひ",
+  "元気ママキッチン",
+  "てぬキッチン",
+  "エプロン",
+  "あおにーな",
 ];
 
 const Home = () => {
@@ -23,4 +40,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;
