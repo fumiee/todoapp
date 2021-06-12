@@ -1,15 +1,13 @@
 import { Caption } from "components/caption";
 import { Headline } from "components/headline";
 import { Nav } from "components/nav";
-import { Video } from "components/video";
 
-export const YoutuberCaptions = [
+const YoutuberCaptions1 = [
   "谷やん",
   "Peaceful Cuisine",
   "きまぐれクック",
   "JunsKitchen",
   "Chef Ropia",
-  "栗原心平",
   "はるあん",
   "こっタソ",
   "かっちゃんねる",
@@ -18,23 +16,25 @@ export const YoutuberCaptions = [
   "榎本美沙",
   "食堂あさごはん",
   "クキパパ",
-  "リュウジ",
-  "コウケンテツ",
   "さくぱん",
   "やさいのひ",
   "元気ママキッチン",
-  "てぬキッチン",
-  "エプロン",
-  "あおにーな",
 ];
+const YoutuberCaptions2 = ["てぬキッチン", "エプロン", "あおにーな"];
 
+const YoutuberCaptions3 = ["リュウジ", "コウケンテツ", "栗原心平"];
 const Home = () => {
   return (
     <div className="min-h-screen font-serif text-gray-600 ">
       <Headline />
       <Nav />
-      <div>
-        <Caption captions={YoutuberCaptions} type="youtuber" />
+      <div className="space-y-2">
+        <p>料理研究家</p>
+        <Caption captions={YoutuberCaptions3} type="youtuber3" />
+        <p>節約・時短・簡単料理</p>
+        <Caption captions={YoutuberCaptions2} type="youtuber2" />
+        <p className="">人気チャンネル</p>
+        <Caption captions={YoutuberCaptions1} type="youtuber1" />
       </div>
       <p className="mb-3"></p>
     </div>

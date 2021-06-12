@@ -9,10 +9,12 @@ export const Caption = (props) => {
           <Link key={caption} href={`/${caption}/template`}>
             <a
               className={cc([
-                "border-2 rounded-lg p-1  text-sm border-gray-300",
+                "border-2 rounded-lg p-1  text-sm border-gray-300 opacity-80",
                 {
                   ["bg-yellow-100"]: props.type === "food",
-                  ["bg-blue-100  bg-opacity-70"]: props.type === "youtuber",
+                  ["bg-blue-100"]: props.type === "youtuber1",
+                  ["bg-indigo-200"]: props.type === "youtuber2",
+                  ["bg-purple-100"]: props.type === "youtuber3",
                   ["bg-yellow-50"]: props.type === "meet",
                   ["bg-red-50"]: props.type === "vesi",
                 },

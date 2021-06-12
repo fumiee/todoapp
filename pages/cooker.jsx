@@ -19,7 +19,9 @@ const YoutuberCaptions = [
 ];
 
 const Home = () => {
-  const params = { q: "献立" };
+  const params = {
+    q: "人気　レシピ", //検索クエリ
+  };
   const req = "search"; //HTTPリクエストの最後
 
   return (
@@ -31,14 +33,14 @@ const Home = () => {
         </div>
         <div className="space-y-1">
           <Caption captions={FoodCaptions} type="food" />
-          <Caption captions={YoutuberCaptions} type="youtuber" />
+          <Caption captions={YoutuberCaptions} type="youtuber1" />
         </div>
 
         <main className="mt-5">
           <div className="space-y-2">
             <p className="border-t-2 border-gray-400 border-dashed"></p>
             <h1 className="flex justify-center items-center text-xl h-10">
-              高評価の動画
+              おすすめ動画
             </h1>
           </div>
           <div className="space-y-3 mt-2"></div>

@@ -38,7 +38,7 @@ const Home = () => {
     <div className="min-h-screen font-serif text-gray-600 ">
       <Headline />
       <Nav />
-      <div className="space-y-1">
+      <div className="space-y-2">
         <p>お肉・魚</p>
         <Caption captions={MeetCaptions} type="meet" />
         <p>野菜</p>

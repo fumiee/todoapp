@@ -1,7 +1,6 @@
 import { Nav } from "components/nav";
 import { useRouter } from "next/router";
 import { Video } from "components/video";
-import { CaptionCallApi } from "components/video";
 
 export const Template = () => {
   const router = useRouter();
