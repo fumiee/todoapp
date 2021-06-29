@@ -1,5 +1,5 @@
-import { Headline } from "components/headline";
-import { Nav } from "components/nav";
+import { Headline } from "components/Headline";
+import { Nav } from "components/Nav";
 import { useState, useEffect } from "react";
 
 const ITEMS = [

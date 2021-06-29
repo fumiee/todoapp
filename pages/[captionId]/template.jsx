@@ -1,10 +1,10 @@
-import { Nav } from "components/nav";
+import { Nav } from "components/Nav";
 import { useRouter } from "next/router";
-import { Video } from "components/video";
+import { Video } from "components/Video";
 
 export const Template = () => {
   const router = useRouter();
-  const params = { q: router.query.captionId };
+  const params = { q: router.query.captionId + "レシピ" };
   const req = "search"; //HTTPリクエストの最後
 
   return (

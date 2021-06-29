@@ -1,9 +1,8 @@
-import { Caption } from "components/caption";
-import { Headline } from "components/headline";
-import { Nav } from "components/nav";
+import { Caption } from "components/Caption";
+import { Headline } from "components/Headline";
+import { Nav } from "components/Nav";
 
 const YoutuberCaptions1 = [
-  "谷やん",
   "Peaceful Cuisine",
   "きまぐれクック",
   "JunsKitchen",

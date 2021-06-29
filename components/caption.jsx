@@ -4,9 +4,9 @@ import cc from "classcat";
 export const Caption = (props) => {
   return (
     <div className="flex flex-wrap gap-y-2 gap-x-2">
-      {props.captions.map((caption) => {
+      {props.captions.map((cap) => {
         return (
-          <Link key={caption} href={`/${caption}/template`}>
+          <Link key={cap} href={`/${cap}/template`}>
             <a
               className={cc([
                 "border-2 rounded-lg p-1  text-sm border-gray-300 opacity-80",
@@ -20,7 +20,7 @@ export const Caption = (props) => {
                 },
               ])}
             >
-              {caption}
+              {cap}
             </a>
           </Link>
         );

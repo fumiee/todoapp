@@ -8,7 +8,7 @@ export const Nav = () => {
   return (
     <div>
       <nav className="bg-white flex items-center justify-around font-serif py-2">
-        <Link href="/cooker">
+        <Link href="/search">
           <img
             className="w-1/7 h-1/2 ml-5"
             src="/search.jpeg"

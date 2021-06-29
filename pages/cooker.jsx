@@ -1,7 +1,7 @@
-import { Caption } from "components/caption";
-import { Headline } from "components/headline";
-import { Nav } from "components/nav";
-import { Video } from "components/video";
+import { Caption } from "components/Caption";
+import { Headline } from "components/Headline";
+import { Nav } from "components/Nav";
+import { Video } from "components/Video";
 
 const FoodCaptions = [
   "鶏もも肉",
@@ -20,7 +20,8 @@ const YoutuberCaptions = [
 
 const Home = () => {
   const params = {
-    q: "人気　レシピ", //検索クエリ
+    part: "snippet",
+    q: "夏　レシピ 簡単", //検索クエリ
   };
   const req = "search"; //HTTPリクエストの最後
 
